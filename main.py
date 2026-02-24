@@ -2,7 +2,7 @@ import flet as ft
 
 def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
-    page.add(ft.Row(ft.Text("Calculadora de propinas", size=40), alignment=ft.MainAxisAlignment.CENTER))
+    page.add(ft.Row(ft.Text("Calculadora de propinas", size=25), alignment=ft.MainAxisAlignment.CENTER))
     
     cuenta = ft.TextField(text_align=ft.TextAlign.CENTER, width=200)
     page.add(ft.Row(cuenta, alignment=ft.MainAxisAlignment.CENTER))
