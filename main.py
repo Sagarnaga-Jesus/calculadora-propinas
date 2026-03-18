@@ -4,7 +4,11 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     page.add(ft.Row(ft.Text("Calculadora de propinas", size=25), alignment=ft.MainAxisAlignment.CENTER))
     
-    cuenta = ft.TextField(text_align=ft.TextAlign.CENTER, width=200, value = "0")
+    cuenta = ft.TextField(text_align=ft.TextAlign.CENTER, width=200, value = "0", label="Número decimal",
+        input_filter=ft.InputFilter(
+            allow=True,
+            regex_string=r"^\d*\.?\d*$"
+        ))
     page.add(ft.Row(cuenta, alignment=ft.MainAxisAlignment.CENTER))
     
     page.add(ft.Row(ft.Text("Cuanto dejara de propina", size=25), alignment=ft.MainAxisAlignment.CENTER))
@@ -13,6 +17,9 @@ def main(page: ft.Page):
     page.add(ft.Row(propina, alignment=ft.MainAxisAlignment.CENTER))
     
     def agregar(e):
+        
+        
+        
         salva = float(cuenta.value or "0")
         salva_propi = float(propina.value)
         agrega.value = str(round(salva* (salva_propi/ 100),2))
